@@ -3,7 +3,7 @@ from django.views.generic import TemplateView
 import requests
 from django.shortcuts import render
 
-_URL_API = 'https://rickandmortyapi.com/api/'
+_URL_API = 'https: // integracion-rick-morty-api.herokuapp.com/api/'
 _EPISODE_URL = _URL_API + 'episode/'
 _CHARACTER_URL = _URL_API + 'character/'
 _LOCATION_URL = _URL_API + 'location/'
