@@ -1,0 +1,34 @@
+{% extends 'header.html' %}
+{% block content %}
+<head>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>All Episodes</h2>
+
+    <table>
+        <tr>
+            <th>Número Episodio</th>
+            <th>Nombre Episodio</th>
+            <th>Fecha Episodio</th>
+            <th>Código Episodio</th>
+
+        </tr>
+        {% for episode in episodes%}
+        <tr>
+            
+            <td>{{episode.id}}</td>
+            <!-- https://stackoverflow.com/questions/17200389/how-to-use-the-href-attribute-in-django-templates -->
+            <td><a href="/episode/{{episode.id}}">{{episode.name}}</a></td>
+            <td>{{episode.air_date}}</td>
+            <td>{{episode.episode}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+{% endblock %}

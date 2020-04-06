@@ -1,0 +1,12 @@
+<header>
+    <a href="{% url 'index' %}">Inicio</a>
+
+    <form action="{% url 'search' %}" method="post">
+        {%csrf_token%}
+        <input type="search" placeholder="Buscador..." name="search">
+        <button type="submit">Search</button>
+    </form>
+</header>
+
+{% block content %}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'header.html' %}
+{% block content %}
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+
+
+<body>
+
+    <table>
+        <tr>
+            <th>Episodios</th>
+        </tr>
+        {% for epi in episodes%}
+        <tr>
+            <td><a href="/episode/{{epi.id}}">{{epi.name}}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+<div>
+
+</div>
+    <table>
+        <tr>
+            <th>Personajes</th>
+        </tr>
+        {% for char in characters%}
+        <tr>
+            <td><a href="/character/{{char.id}}">{{char.name}}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+
+    <table>
+        <tr>
+            <th>Lugares</th>
+        </tr>
+        {% for loc in locations%}
+        <tr>
+            <td><a href="/location/{{loc.id}}">{{loc.name}}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </body>
+    {% endblock %}

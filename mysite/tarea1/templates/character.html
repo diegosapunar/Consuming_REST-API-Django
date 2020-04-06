@@ -1,0 +1,46 @@
+{% extends 'header.html' %}
+{% block content %}
+<head>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <img src={{image}} alt="Avatar" class="avatar">
+    <h2>Nombre del personaje: {{name}}</h2>
+    <h2>Estado del personaje: {{status}}</h2>
+    <h2>Especie del personaje: {{species}}</h2>
+    <h2>Tipo del personaje: {{type}}</h2>
+    <h2>Género del personaje: {{gender}}</h2>
+
+    {% if origin.name != "unknown"%}    
+        <h2>Lugar de origen del personaje: <a href="/location/{{origin.id}}">{{origin.name}}</a></h2>
+    {% else %}
+        <h2>Lugar de origen del personaje: {{origin.name}}</h2>
+    {% endif %}
+
+    {% if location.name != "unknown"%}
+        <h2>Nombre de locación del personaje: <a href="/location/{{location.id}}">{{location.name}}</a></h2>
+    {% else %}
+        <h2>Nombre de locación del personaje: {{location.name}}</h2>
+    {% endif %}
+
+    <table>
+        <tr>
+            <th>Episodios</th>
+
+        </tr>
+        {% for epi in episodes%}
+        <tr>
+            <td><a href="/episode/{{epi.id}}">{{epi.name}}</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+
+{% endblock %}
